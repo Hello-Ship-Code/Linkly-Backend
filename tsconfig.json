@@ -22,7 +22,7 @@
     "allowJs": false,
     "skipLibCheck": true,
     "typeRoots": ["./node_modules/@types", "./@types"],
-    "types": ["node", "express"] 
+    "types": ["node", "express"]
   },
   "include": ["src", "@types"],
   "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]

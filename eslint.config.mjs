@@ -6,6 +6,7 @@ import tseslint from '@typescript-eslint/eslint-plugin' // TS plugin
 export default [
   {
     files: ['**/*.{js,mjs,cjs,ts}'], // Target all JS and TS files
+    ignores: ['node_modules/', 'dist/', '.git/', '.gitignore'],
     languageOptions: {
       parser: tsParser, // Use TypeScript parser
       globals: {

@@ -215,5 +215,3 @@ Want to contribute? Open an issue or submit a PR on **GitHub**! 🔥
 
 - **Abhinav Peter**
 - GitHub: [Hello-Ship-Code](https://github.com/Hello-Ship-Code)
-
-
