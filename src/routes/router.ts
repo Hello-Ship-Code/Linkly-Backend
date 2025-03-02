@@ -2,6 +2,7 @@ import { Router, type Express, type Response } from 'express'
 
 import {
   homeViewController,
+  loginController,
   loginViewController,
   profileViewController,
   signupViewController,
@@ -18,7 +19,7 @@ protectedRoutes.post('/', profileViewController)
 
 const apiRouter = Router()
 
-apiRouter.post('/login', loginViewController)
+apiRouter.post('/login', loginController)
 apiRouter.post('/signup', signupViewController)
 
 const htmlRouter = Router()

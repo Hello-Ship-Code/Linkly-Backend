@@ -9,21 +9,11 @@ interface DecodedUser extends JwtPayload {
   email: string
 }
 
-export const setUser = (user: User) => {
-  return jwt.sign(
-    {
-      id: user.id,
-      email: user.email,
-    },
-    env.JWT_SECRET,
-  )
-}
+export const setUser = (user: User) => jwt.sign({ id: user.id, email: user.email }, env.JWT_SECRET)
 
 export const getUser = (token: string): DecodedUser | null => {
   try {
-    if (!token) {
-      return null
-    }
+    if (!token) return null
 
     const decode = jwt.verify(token, env.JWT_SECRET) as JwtPayload
 
@@ -32,7 +22,7 @@ export const getUser = (token: string): DecodedUser | null => {
     }
 
     return null
-  } catch (error) {
+  } catch (_) {
     return null
   }
 }

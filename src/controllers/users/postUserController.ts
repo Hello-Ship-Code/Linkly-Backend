@@ -1,8 +1,8 @@
 import { prisma } from "../../config/db.config";
 
-import { hashPassword } from "../../utils/user/passwordHashing";
+import HttpError from "../../utils/error-handlers/HttpError";
+import { hashPassword, verifyPassword } from "../../utils/user/passwordHashing";
 import { type signupUserData, type loginUserData } from "../../utils/user/userResponse";
-import { verifyPassword } from './../../utils/user/passwordHashing';
 
 export const signUpUserController = async (userData: signupUserData) => {
   try {
@@ -20,12 +20,22 @@ export const signUpUserController = async (userData: signupUserData) => {
   }
 }
 
-export const loginUserController = async (userData: loginUserData) => {
-  const user = prisma.user.findFirst({
+export const loginUser = async (userData: loginUserData) => {
+
+  const user = await prisma.user.findFirst({
     where: { email: userData.email }
   })
 
   if (!user) {
+    throw new HttpError('user not found', 409)
   }
+
+  const isMatch = await verifyPassword(userData.password, user.password)
+
+  if (isMatch) {
+    return user
+  }
+
+  throw new HttpError('user not found', 409)
 
 }
