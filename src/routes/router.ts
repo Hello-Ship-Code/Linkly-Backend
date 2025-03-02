@@ -1,5 +1,6 @@
 import { Router, type Express, type Response } from 'express'
 
+import { postUrlController } from '../controllers/urls/api/postUrlController'
 import { loginController } from '../controllers/users/api/login.controller'
 import { signupController } from '../controllers/users/api/signup.controller'
 import { homeViewController } from '../controllers/users/views/home-view.controller'
@@ -14,7 +15,7 @@ const protectedRoutes = Router()
 
 protectedRoutes.get('/:id')
 protectedRoutes.get('/', profileViewController)
-protectedRoutes.post('/', profileViewController)
+protectedRoutes.post('/', postUrlController)
 
 const apiRouter = Router()
 

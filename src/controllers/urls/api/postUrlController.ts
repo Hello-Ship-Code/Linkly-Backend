@@ -7,7 +7,7 @@ import { postUrl } from '../services/postUrl'
 
 export const postUrlController: RequestHandler = async (req, res, next) => {
   try {
-    const redirectUrl = postUrlSchema.parse(req.body)
+    const { redirectUrl } = postUrlSchema.parse(req.body)
 
     if (!redirectUrl) {
       res.render('render', { path: '/user' })
