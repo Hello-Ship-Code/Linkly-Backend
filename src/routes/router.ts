@@ -1,12 +1,11 @@
 import { Router, type Express, type Response } from 'express'
 
-import {
-  homeViewController,
-  loginController,
-  loginViewController,
-  profileViewController,
-  signupViewController,
-} from '../controllers/staticViewController'
+import { loginController } from '../controllers/users/api/login.controller'
+import { signupController } from '../controllers/users/api/signup.controller'
+import { homeViewController } from '../controllers/users/views/home-view.controller'
+import { loginViewController } from '../controllers/users/views/login-view.controller'
+import { profileViewController } from '../controllers/users/views/profile-view.controller'
+import { signupViewController } from '../controllers/users/views/signup-view.controller'
 import { authMiddleware } from '../middlewares/authMiddleware'
 
 import { errorHandler } from '../utils/error-handlers/error.handler'
@@ -20,7 +19,7 @@ protectedRoutes.post('/', profileViewController)
 const apiRouter = Router()
 
 apiRouter.post('/login', loginController)
-apiRouter.post('/signup', signupViewController)
+apiRouter.post('/signup', signupController)
 
 const htmlRouter = Router()
 

@@ -1,4 +1,3 @@
-
 declare global {
   namespace Express {
     interface Locals {
@@ -10,4 +9,4 @@ declare global {
   }
 }
 
-export { }
+export {}

@@ -5,19 +5,15 @@ import { getUser } from '../utils/JWT/auth'
 export const authMiddleware: RequestHandler = (req, res, next) => {
   const token = req.cookies?.uuid
 
-  console.log(token)
-
   if (!token) {
-    res.redirect('/login')
+    res.render('redirect', { path: '/login' })
     return
   }
 
   const user = getUser(token)
 
-  console.log(user)
-
   if (!user) {
-    res.redirect('/login')
+    res.render('redirect', { path: '/login' })
     return
   }
 
