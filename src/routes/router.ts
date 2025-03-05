@@ -1,6 +1,7 @@
 import { Router, type Express, type Response } from 'express'
 
 import { postUrlController } from '../controllers/urls/api/postUrlController'
+import { urlAnalysis } from '../controllers/urls/api/urlAnalysis'
 import { loginController } from '../controllers/users/api/login.controller'
 import { signupController } from '../controllers/users/api/signup.controller'
 import { homeViewController } from '../controllers/users/views/home-view.controller'
@@ -13,7 +14,7 @@ import { errorHandler } from '../utils/error-handlers/error.handler'
 
 const protectedRoutes = Router()
 
-protectedRoutes.get('/:id')
+protectedRoutes.get('/:shortId', urlAnalysis)
 protectedRoutes.get('/', profileViewController)
 protectedRoutes.post('/', postUrlController)
 

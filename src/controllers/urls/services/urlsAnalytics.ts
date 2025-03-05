@@ -1,8 +1,14 @@
 import { prisma } from '../../../config/db.config'
 
 export const getUrlByIdController = async (shortId: string) => {
-  return await prisma.url.findUnique({
+
+  return await prisma.url.update({
     where: { shortId },
-    include: { VisitHistory: true },
+    data: {
+      visitHistory: {
+        create: [{ timestamp: new Date() }]
+      }
+    }
   })
+
 }

@@ -20,7 +20,6 @@ export const loginController: RequestHandler = async (req, res, _next) => {
     }
 
     res.cookie('uuid', setUser(user))
-
     res.render('redirect', { path: '/user' })
     return
   } catch (error) {

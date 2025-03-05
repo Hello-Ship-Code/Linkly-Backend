@@ -24,7 +24,7 @@ model Url {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId String @db.ObjectId
   redirectUrl String 
-  VisitHistory Visit[]
+  visitHistory Visit[]
   createdAt DateTime @default(now())
 }
 
