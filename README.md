@@ -1,22 +1,22 @@
 # AuthURL-Backend
 
-AuthURL-Backend is a **backend hub** for **user authentication and URL shortening**, built using **Node.js, Express, Prisma, MongoDB, and JWT**. The project follows a modular route-based structure, with `/api/user` handling authentication, `/profile` managing URL-related functionalities, and `/` serving static content.
+AuthURL-Backend is a **backend hub** for **user authentication and URL shortening**, built using **Node.js, Express, Prisma, MongoDB, and JWT**. The project follows a modular route-based structure, with `/user` handling URL-related functionalities, `/api` managing authentication, and `/` serving static content.
 
 ---
 
 ## 🚀 Features
 
-### 1️⃣ User Authentication API (`/api/user`)
+### 1️⃣ User Authentication API (`/api`)
 
 - User registration and login with hashed passwords.
 - JWT-based authentication for secure access.
 - CRUD operations on user details.
 
-### 2️⃣ URL Shortener API (`/profile`)
+### 2️⃣ URL Shortener API (`/user`)
 
 - Generate short URLs from long URLs.
 - Retrieve original URLs using a short code.
-- Track visit history and analytics via `/profile/:id`.
+- Track visit history and analytics via `/user/:shortId`.
 
 ### 3️⃣ Static Content (`/`)
 
@@ -31,7 +31,6 @@ AuthURL-Backend is a **backend hub** for **user authentication and URL shortenin
 - **Prisma ORM** - Database management
 - **MongoDB** - NoSQL database
 - **TypeScript** - Type safety
-- **EJS** - View engine for rendering pages (optional)
 - **JWT** - Secure authentication
 
 ---
@@ -48,7 +47,7 @@ AuthURL-Backend/
 │   ├── routes/             # API routes
 │   ├── utils/              # Utility functions
 │   ├── validation/         # User input validation
-│   ├── views/              # EJS templates (if used)
+│   ├── views/              # Static content controllers
 │   ├── index.ts            # Main entry point
 │── prisma/
 │   ├── schema.prisma       # Database schema
@@ -110,19 +109,19 @@ npm start
 
 ## 🛠️ API Endpoints
 
-### 🏷️ User Authentication API (`/api/user`)
+### 🏷️ User Authentication API (`/api`)
 
 #### ➕ Register User
 
 ```http
-POST /api/user/signup
+POST /api/signup
 ```
 
 **Request Body:**
 
 ```json
 {
-  "firstName": "John",
+  "userName": "JohnDoe",
   "email": "john@example.com",
   "password": "your-secure-password"
 }
@@ -131,7 +130,7 @@ POST /api/user/signup
 #### 🔑 Login User
 
 ```http
-POST /api/user/login
+POST /api/login
 ```
 
 **Request Body:**
@@ -151,12 +150,12 @@ POST /api/user/login
 }
 ```
 
-### 🔗 URL Shortener API (`/profile`, `/profile/:id`)
+### 🔗 URL Shortener API (`/user`)
 
 #### 🎯 Create Short URL
 
 ```http
-POST /profile
+POST /user
 ```
 
 **Request Body:**
@@ -170,7 +169,7 @@ POST /profile
 #### 🔗 Retrieve Original URL or Analytics
 
 ```http
-GET /profile/:id
+GET /user/:shortId
 ```
 
 ### 🏷️ Static Content (`/`)
@@ -215,3 +214,4 @@ Want to contribute? Open an issue or submit a PR on **GitHub**! 🔥
 
 - **Abhinav Peter**
 - GitHub: [Hello-Ship-Code](https://github.com/Hello-Ship-Code)
+
