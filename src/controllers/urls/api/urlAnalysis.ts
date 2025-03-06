@@ -1,7 +1,7 @@
-import type { RequestHandler } from "express";
+import type { RequestHandler } from 'express'
 
-import HttpError from "../../../utils/error-handlers/HttpError";
-import { getUrlByIdController } from "../services/urlsAnalytics";
+import HttpError from '../../../utils/error-handlers/HttpError'
+import { getUrlByIdController } from '../services/urlsAnalytics'
 
 export const urlAnalysis: RequestHandler = async (req, res, next) => {
   try {
@@ -14,9 +14,7 @@ export const urlAnalysis: RequestHandler = async (req, res, next) => {
     const result = await getUrlByIdController(shortId)
 
     res.redirect(result.redirectUrl)
-
   } catch (error) {
     next(new HttpError(`${error}`, 404))
   }
-
 }

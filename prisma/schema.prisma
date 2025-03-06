@@ -12,6 +12,7 @@ datasource db {
 model User {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   userName String
+  profilePicture String
   email String @unique
   password String
   shortUrl  Url[]

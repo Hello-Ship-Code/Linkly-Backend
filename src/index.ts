@@ -9,11 +9,15 @@ import { appRouter } from './routes/router'
 const app = express()
 
 const viewsPath = path.join(__dirname, '..', 'src', 'views')
+const uploadsPath = path.join(__dirname, '../uploads') // Ensure correct path
 
 // Middlewares
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
+
+// Serve Static Files (Uploaded Images)
+app.use('/uploads', express.static(uploadsPath))
 
 // Server-Side Rendering Setup
 app.set('view engine', 'ejs')

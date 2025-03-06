@@ -11,6 +11,8 @@ export const signUpUser = async (userData: signupUserData) => {
       data: {
         userName: userData.userName,
         email: userData.email,
+        profilePicture:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABbXr4i-QODqhy7tofHYmTYh05rYPktzacw&s',
         password: hashedPassword,
       },
     })
