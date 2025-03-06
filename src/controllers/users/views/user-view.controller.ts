@@ -3,8 +3,9 @@ import type { RequestHandler } from 'express'
 import { getUrlsControllers } from '../../urls/services/getUrls'
 
 import HttpError from '../../../utils/error-handlers/HttpError'
+import { getUserById } from '../services/getUser'
 
-export const profileViewController: RequestHandler = async (_, res, next) => {
+export const userViewController: RequestHandler = async (_, res, next) => {
   try {
     const userId = res.locals.user?.id
 
@@ -12,7 +13,9 @@ export const profileViewController: RequestHandler = async (_, res, next) => {
 
     const urls = (await getUrlsControllers(userId)) || []
 
-    res.render('user', { urls })
+    const user = await getUserById(userId)
+
+    res.render('user', { urls, userProfile: user?.profilePicture })
   } catch (error) {
     return next(new HttpError(`${error}`, 409))
   }

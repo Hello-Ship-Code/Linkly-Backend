@@ -8,9 +8,9 @@ import { uploadController } from '../controllers/users/api/upload.controller'
 import { upload } from '../controllers/users/services/uploadMulterService'
 import { homeViewController } from '../controllers/users/views/home-view.controller'
 import { loginViewController } from '../controllers/users/views/login-view.controller'
-import { profileViewController } from '../controllers/users/views/profile-view.controller'
 import { signupViewController } from '../controllers/users/views/signup-view.controller'
 import { uploadViewController } from '../controllers/users/views/upload-view.controller'
+import { userViewController } from '../controllers/users/views/user-view.controller'
 import { authMiddleware } from '../middlewares/authMiddleware'
 
 import { errorHandler } from '../utils/error-handlers/error.handler'
@@ -18,7 +18,7 @@ import { errorHandler } from '../utils/error-handlers/error.handler'
 const protectedRoutes = Router()
 
 protectedRoutes.get('/:shortId', urlAnalysis)
-protectedRoutes.get('/', profileViewController)
+protectedRoutes.get('/', userViewController)
 protectedRoutes.post('/', postUrlController)
 protectedRoutes.post('/upload', upload.single('profilePicture'), uploadController)
 
