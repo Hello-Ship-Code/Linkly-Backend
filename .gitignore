@@ -8,6 +8,9 @@ bun.lockb
 
 .DS_Store
 
+# uploads
+uploads/
+
 # Build output
 dist/
 build/
