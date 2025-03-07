@@ -12,5 +12,5 @@
       "dest": "dist/index.js"
     }
   ],
-  "buildCommand": "npm run build"
+  "buildCommand": "npx prisma generate && npm run build"
 }
