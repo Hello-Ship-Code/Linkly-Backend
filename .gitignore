@@ -12,6 +12,7 @@ bun.lockb
 uploads/
 
 # Build output
+dist/
 build/
 out/
 .cache/
