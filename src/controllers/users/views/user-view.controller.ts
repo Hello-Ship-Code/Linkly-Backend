@@ -15,7 +15,7 @@ export const userViewController: RequestHandler = async (_, res, next) => {
 
     const user = await getUserById(userId)
 
-    res.render('user', { urls, userProfile: user?.profilePicture })
+    res.render('user', { urls, user })
   } catch (error) {
     return next(new HttpError(`${error}`, 409))
   }

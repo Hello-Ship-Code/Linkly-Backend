@@ -8,6 +8,8 @@ export const uploadController: RequestHandler = (req, res, next) => {
     const userId = res.locals.user?.id
     const profilePicture = req.file?.filename
 
+    // console.log(req.file) debugging 
+
     uploadPicture(userId as string, profilePicture as string)
 
     return res.redirect('/user')

@@ -1,12 +1,11 @@
 // import fs from "fs";
 import multer from 'multer'
-import path from 'path'
 
-const uploadDir = path.resolve(__dirname, '../../../../uploads')
+import { uploadsPath } from '../../index'
 
 const storage = multer.diskStorage({
   destination: (_req, _file, cb) => {
-    cb(null, uploadDir)
+    cb(null, uploadsPath)
   },
   filename: (_req, file, cb) => {
     cb(null, `${Date.now()}-${file.originalname}`)

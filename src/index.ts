@@ -9,7 +9,7 @@ import { appRouter } from './routes/router'
 const app = express()
 
 const viewsPath = path.join(__dirname, '..', 'src', 'views')
-const uploadsPath = path.join(__dirname, '../uploads') // Ensure correct path
+export const uploadsPath = path.join(__dirname, '../uploads') // Ensure correct path
 
 // Middlewares
 app.use(express.json())

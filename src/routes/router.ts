@@ -5,7 +5,6 @@ import { urlAnalysis } from '../controllers/urls/api/urlAnalysis'
 import { loginController } from '../controllers/users/api/login.controller'
 import { signupController } from '../controllers/users/api/signup.controller'
 import { uploadController } from '../controllers/users/api/upload.controller'
-import { upload } from '../controllers/users/services/uploadMulterService'
 import { homeViewController } from '../controllers/users/views/home-view.controller'
 import { loginViewController } from '../controllers/users/views/login-view.controller'
 import { signupViewController } from '../controllers/users/views/signup-view.controller'
@@ -14,13 +13,14 @@ import { userViewController } from '../controllers/users/views/user-view.control
 import { authMiddleware } from '../middlewares/authMiddleware'
 
 import { errorHandler } from '../utils/error-handlers/error.handler'
+import { upload } from '../utils/user/uploadMulterService'
 
 const protectedRoutes = Router()
 
+protectedRoutes.post('/upload', upload.single('profilePicture'), uploadController)
 protectedRoutes.get('/:shortId', urlAnalysis)
 protectedRoutes.get('/', userViewController)
 protectedRoutes.post('/', postUrlController)
-protectedRoutes.post('/upload', upload.single('profilePicture'), uploadController)
 
 const apiRouter = Router()
 

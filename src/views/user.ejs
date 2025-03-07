@@ -88,10 +88,10 @@
 
   <!-- User Profile Section -->
   <div class="user-profile">
-    <span>Welcome, User</span>
-    <% if (userProfile) { %>
+    <% if (user) { %>
+      <span>Welcome, <%= user.userName %></span>
       <a href="/upload">
-        <img src="/uploads/<%= userProfile %>" alt="Profile Picture" class="profile-pic">
+        <img src="/uploads/<%= user.profilePicture %>" alt="Profile Picture" class="profile-pic">
       </a>
     <% } else { %>
       <a href="/upload">
