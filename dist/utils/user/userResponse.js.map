@@ -1,0 +1,1 @@
+{"version":3,"file":"userResponse.js","sourceRoot":"","sources":["../../../src/utils/user/userResponse.ts"],"names":[],"mappings":"","sourcesContent":["export interface signupUserData {\n  userName: string\n  email: string\n  password: string\n}\n\nexport interface loginUserData {\n  email: string\n  password: string\n}\n"]}

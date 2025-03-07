@@ -1,0 +1,1 @@
+{"version":3,"file":"getUrlHandler.js","sourceRoot":"","sources":["../../../src/handler/urls/getUrlHandler.ts"],"names":[],"mappings":"","sourcesContent":["import { type Url, type Visit } from '@prisma/client'\n\nexport type getUrlsResponse = Promise<(Url & { VisitHistory: Visit[] })[]>\n"]}
