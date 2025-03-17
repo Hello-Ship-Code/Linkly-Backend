@@ -1,6 +1,6 @@
 # Linkly
 
-Linkly is a **backend hub** for **user authentication and URL shortening**, built using **Node.js, Express, Prisma, MongoDB, and JWT**. The project follows a modular route-based structure, with `/user` handling URL-related functionalities, `/api` managing authentication, and `/` serving static content.
+Linkly is a **backend hub** for **user authentication and URL shortening**, built using **Node.js, EJS, Express, Prisma, MongoDB, and JWT**. The project follows a modular route-based structure, with `/user` handling URL-related functionalities, `/api` managing authentication, and `/` serving static content.
 
 ---
 
