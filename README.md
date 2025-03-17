@@ -1,6 +1,6 @@
-# AuthURL-Backend
+# Linkly
 
-AuthURL-Backend is a **backend hub** for **user authentication and URL shortening**, built using **Node.js, Express, Prisma, MongoDB, and JWT**. The project follows a modular route-based structure, with `/user` handling URL-related functionalities, `/api` managing authentication, and `/` serving static content.
+Linkly is a **backend hub** for **user authentication and URL shortening**, built using **Node.js, Express, Prisma, MongoDB, and JWT**. The project follows a modular route-based structure, with `/user` handling URL-related functionalities, `/api` managing authentication, and `/` serving static content.
 
 ---
 
@@ -38,7 +38,7 @@ AuthURL-Backend is a **backend hub** for **user authentication and URL shortenin
 ## 📂 Project Structure
 
 ```
-AuthURL-Backend/
+Linkly/
 │── src/                    # Source code
 │   ├── config/             # Configuration files (env, DB connection)
 │   ├── controllers/        # Business logic (user & URL controllers)
@@ -63,8 +63,8 @@ AuthURL-Backend/
 ### 1️⃣ Clone the Repository
 
 ```sh
-git clone https://github.com/hello-ship-code/AuthURL-Backend.git
-cd AuthURL-Backend
+git clone https://github.com/hello-ship-code/Linkly.git
+cd Linkly
 ```
 
 ### 2️⃣ Install Dependencies
@@ -214,3 +214,4 @@ Want to contribute? Open an issue or submit a PR on **GitHub**! 🔥
 
 - **Abhinav Peter**
 - GitHub: [Hello-Ship-Code](https://github.com/Hello-Ship-Code)
+
