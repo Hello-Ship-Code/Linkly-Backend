@@ -37,7 +37,7 @@ Linkly is a **backend hub** for **user authentication and URL shortening**, buil
 
 ## 📂 Project Structure
 
-```
+```c
 Linkly/
 │── src/                    # Source code
 │   ├── config/             # Configuration files (env, DB connection)
@@ -214,4 +214,3 @@ Want to contribute? Open an issue or submit a PR on **GitHub**! 🔥
 
 - **Abhinav Peter**
 - GitHub: [Hello-Ship-Code](https://github.com/Hello-Ship-Code)
-
